@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc mừng 20/10 💐</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffd6e0, #fff5f9);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff4081;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .fade {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      padding: 0 20px;
+      line-height: 1.5em;
+    }
+
+    .fade.active {
+      opacity: 1;
+    }
+
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px) brightness(0.9);
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+    }
+
+    .bg.active {
+      opacity: 1;
+    }
+
+    .credit {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #ff7aa8;
+    }
+  </style>
+</head>
+<body>
+  <!-- Backgrounds -->
+  <div class="bg active" style="background-image: url('https://i.imgur.com/wtUDBQm.jpg');"></div>
+  <div class="bg" style="background-image: url('https://i.imgur.com/XsKfXkT.jpg');"></div>
+  <div class="bg" style="background-image: url('https://i.imgur.com/d0Ti4bD.jpg');"></div>
+  <div class="bg" style="background-image: url('https://i.imgur.com/zrEIk9O.jpg');"></div>
+  <div class="bg" style="background-image: url('https://i.imgur.com/yZs3aQ3.jpg');"></div>
+  <div class="bg" style="background-image: url('https://i.imgur.com/j9tBoLf.jpg');"></div>
+
+  <div class="container">
+    <div class="fade active">💐 Chúc mừng ngày 20/10 💐</div>
+    <div class="fade">Gửi đến các chị em xinh đẹp nhất quả đất 🌸<br>Chúc luôn vui vẻ, hạnh phúc và cười tươi cả ngày 😍</div>
+    <div class="fade">Mong mọi buồn phiền tan biến<br>Để nhường chỗ cho niềm vui và bánh ngọt 🍰</div>
+    <div class="fade">Đi học thì nhẹ đầu 🧠<br>Đi làm thì nhẹ ví 💸<br>Nhưng vẫn xinh đều đều 😆</div>
+    <div class="fade">Nếu ai hỏi 20/10 có quà chưa?<br>Thì trả lời: "Có lời chúc của tui rồi nè 😎"</div>
+    <div class="fade">Muốn tặng quà lắm nhưng ngân sách... không cho phép 🥲</div>
+    <div class="fade">Thôi thì tặng nụ cười, tặng tí muối<br>Cho cuộc đời mặn mà thêm tí 😜</div>
+    <div class="fade">Chúc cho các cô gái luôn xinh như ảnh mạng<br>Và hạnh phúc như lúc... sắp nghỉ học 😂</div>
+    <div class="fade">20/10 không ai tặng quà cũng đừng buồn nha<br>Vì ít ra... có tao nhớ tới 😁</div>
+    <div class="fade">Chúc tất cả chị em ngày càng xinh, càng tự tin 💖<br>Và bớt cà khịa người ta 😏</div>
+  </div>
+
+  <div class="credit">Made with 💖 by Một người nghèo nhưng có tâm 😎</div>
+
+  <script>
+    const fades = document.querySelectorAll('.fade');
+    const bgs = document.querySelectorAll('.bg');
+    let current = 0;
+
+    function nextSlide() {
+      fades[current].classList.remove('active');
+      bgs[current % bgs.length].classList.remove('active');
+      current = (current + 1) % fades.length;
+      fades[current].classList.add('active');
+      bgs[current % bgs.length].classList.add('active');
+    }
+
+    setInterval(nextSlide, 4000); // đổi cảnh mỗi 4s
+  </script>
+</body>
+</html>
